@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * times_table- prints 9 times table
- *
+ * print_times_table - prints 9 times table
+ * @n: which table
  * Return: void
  */
-void times_table(void)
+void print_times_table(n)
 {
 	if (n >= 0 && n <= 15)
 	{
