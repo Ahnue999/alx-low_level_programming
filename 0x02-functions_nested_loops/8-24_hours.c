@@ -20,11 +20,11 @@ void jack_bauer(void)
 			c = j / 10;
 			d = j % 10;
 
-			_putchar('a');
-			_putchar('b');
+			_putchar(a);
+			_putchar(b);
 			_putchar(':');
-			_putchar('c');
-			_putchar('d');
+			_putchar(c);
+			_putchar(d);
 			_putchar('\n');
 		}
 	}
