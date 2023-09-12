@@ -5,7 +5,7 @@
  *
  * Return: void
  */
-void times_table(void);
+void times_table(void)
 {
 	if (n >= 0 && n <= 15)
 	{
