@@ -8,8 +8,8 @@ int main()
 {
 	int i;
 
-	i = 31;
-	positive_or_negative(31);
+	i = 0;
+	positive_or_negative(0);
 
 	return (0);
 }
