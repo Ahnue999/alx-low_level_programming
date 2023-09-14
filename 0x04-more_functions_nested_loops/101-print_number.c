@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	unsinged int m, d, count;
+	unsigned int m, d, count;
 
 	if (n < 0)
 	{
@@ -30,5 +30,4 @@ void print_number(int n)
 	{
 		_putchar((m / count) % 10 + '0');
 	}
-	_putchar('\n');
 }
