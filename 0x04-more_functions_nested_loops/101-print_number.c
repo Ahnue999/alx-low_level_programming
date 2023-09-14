@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * print_line - prints lowercase alphabet
+ * print_number - prints lowercase alphabet
+ * @n: number to print
  * Return: void
  */
-void print_line(int n)
+void print_number(int n)
 {
 	int a, b, c, d;
 
