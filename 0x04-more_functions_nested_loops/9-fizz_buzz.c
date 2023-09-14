@@ -18,7 +18,7 @@ int main(void)
 			printf("FizzBuzz");
 		else
 			printf("%d", i);
-		if (i < 100)
+		if (i < 99)
 			putchar(' ');
 	}
 	putchar('\n');
