@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints lowercase alphabet
+ * more_numbers - prints lowercase alphabet
  * Return: void
  */
-void print_alphabet(void)
+void more_numbers(void)
 {
 	int i, j;
 	int a, b;
