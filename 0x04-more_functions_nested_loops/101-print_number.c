@@ -7,41 +7,28 @@
  */
 void print_number(int n)
 {
-	int m;
-
+	unsinged int m, d, count;
 
 	if (n < 0)
-		m = -n;
+	{
+		_putchar('-');
+		m = -1 * n;
+	}
+	else
+		m = n;
 
-	if (m > 0 && m <= 9)
+	d = m;
+	count = 1;
+
+	while (d > 9)
 	{
-		if (n < 0)
-			_putchar('-');
-		_putchar(m + '0');
+		d /= 10;
+		count *= 10;
 	}
-	if (m >= 10 && m <= 99)
+
+	for (; count >= 1; count / 10)
 	{
-		if (n < 0)
-			_putchar('-');
-		_putchar(m / 10 + '0');
-		_putchar(m % 10 + '0');
-	}
-	if (m >= 100 && m <= 999)
-	{
-		if (n < 0)
-			_putchar('-');
-		_putchar(m / 100 + '0');
-		_putchar((m / 10) % 10 + '0');
-		_putchar(m % 10 + '0');
-	}
-	if (m >= 1000 && m <= 9999)
-	{
-		if (n < 0)
-			_putchar('-');
-		_putchar(m / 1000 + '0');
-		_putchar((m / 100) % 10 + '0');
-		_putchar((m / 10) % 10 + '0');
-		_putchar(m % 10 + '0');
+		_putchar((m / count) % 10 + '0');
 	}
 	_putchar('\n');
 }
