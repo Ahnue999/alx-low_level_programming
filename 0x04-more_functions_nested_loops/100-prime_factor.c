@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	unsigned long int i, a, b;
+	long int i, a, b;
 
 	a = 612852475143 / 2;
 
@@ -17,5 +17,7 @@ int main(void)
 			b = i;
 		}
 	}
-	printf("%lu\n", b);
+	printf("%ld\n", b);
+
+	return (0);
 }
