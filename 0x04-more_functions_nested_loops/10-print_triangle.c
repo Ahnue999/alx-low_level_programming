@@ -21,7 +21,8 @@ void print_triangle(int size)
 			{
 				putchar('#');
 			}
-			putchar('\n');
+			if (i < size)
+				putchar('\n');
 		}
 	}
 	putchar('\n');
