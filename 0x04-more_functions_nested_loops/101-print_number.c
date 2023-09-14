@@ -33,6 +33,13 @@ void print_line(int n)
 		_putchar((m / 10) % 10 + '0');
 		_putchar(m % 10 + '0');
 	}
-
-
+	if (m >= 1000 && m <= 9999)
+	{
+		if (n < 0)
+			_putchar('-');
+		_putchar(m / 1000 + '0');
+		_putchar((m / 100) % 10 + '0');
+		_putchar((m / 10) % 10 + '0');
+		_putchar(m % 10 + '0');
+	}
 }
