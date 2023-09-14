@@ -2,6 +2,7 @@
 
 /**
  * print_line - prints lowercase alphabet
+ * @n: length of the line
  * Return: void
  */
 void print_line(int n)
