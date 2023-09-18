@@ -8,7 +8,7 @@
   */
 char *_strcpy(char *dest, char *src)
 {
-	int length = 0;
+	int i, length = 0;
 
 	while (length >= 0)
 	{
@@ -22,5 +22,5 @@ char *_strcpy(char *dest, char *src)
 	{
 		*(dest + i) = *(src + i);
 	}
-	return *dest;
+	return (dest);
 }
