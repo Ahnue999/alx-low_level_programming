@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * reset_to_98 - yes
+  * swap_int - swap two intergers
   * @a: the number to swap
   * @b: the number to swap
   * Return: void
