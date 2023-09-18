@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-  * puts2 - returns the length of a string
+  * puts_half - returns the length of a string
   * @str: the string
   * Return: void
   */
-void puts2(char *str)
+void puts_half(char *str)
 {
 	int length = 0, j;
 
