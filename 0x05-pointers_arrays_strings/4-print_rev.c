@@ -1,14 +1,22 @@
 #include "main.h"
 
 /**
-  * _puts - prints a string
-  * @str: the string
+  * print_rev - prints a string
+  * @s: the string
   * Return: void
   */
-void _puts(char *str)
+void print_rev(char *s);
 {
 	int i = 0;
 
-	while (*(str + i) != '\0')
-		_putchar(*(str + i));
+	while (*(s + i) != '\0')
+	{
+		_putchar(*(s + i));
+		i++;
+	}
+
+	for (; i > 0; i--)
+		_putchar(*(s + i));
+
+	_putchar('\n');
 }
