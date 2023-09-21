@@ -7,30 +7,26 @@
  */
 char *cap_string(char *c)
 {
-	int length, i;
-	int state;
+	int length, i = 0;
+	int delim[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	state = 0;
+
+	if (c[i] >= 'a' && c[i] <= 'z')
+		c[i] -= 32;
+
 	length = 0;
 	while (c[length] != '\0')
-		length++;
-
-	for (i = 0; i < length; i++)
 	{
-		if (state)
+		for (i = 0; i < 13; i++)
 		{
-			if (c[i] >= 'a' && c[i] <= 'z')
-				c[i] -= 32;
-			state = 0;
+			if (c[length] == delim[i])
+			{
+				if (c[length + 1] >= 'a' && c[length + 1] <= 'z')
+					c[length + 1] -= 32;
+				break;
+			}
 		}
-		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] ==  ',')
-			state = 1;
-		else if (c[i] ==  ';' || c[i] ==  '.' || c[i] ==  '!')
-			state = 1;
-		else if (c[i] ==  '"' || c[i] ==  '(' || c[i] ==  ')')
-			state = 1;
-		else if (c[i] ==  '?'  || c[i] ==  '{' || c[i] ==  '}')
-			state = 1;
+		length++;
 	}
 	return (c);
 }
