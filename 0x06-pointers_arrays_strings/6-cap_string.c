@@ -23,10 +23,14 @@ char *cap_string(char *c)
 				c[i] -= 32;
 			state = 0;
 		}
-		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] ==  ',' || c[i] ==  ';' || c[i] ==  '.' || c[i] ==  '!' || c[i] ==  '?' || c[i] ==  '"' || c[i] ==  '(' || c[i] ==  ')' || c[i] ==  '{' || c[i] ==  '}')
-		{
+		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] ==  ',')
 			state = 1;
-		}
+		else if (c[i] ==  ';' || c[i] ==  '.' || c[i] ==  '!')
+			state = 1;
+		else if (c[i] ==  '"' || c[i] ==  '(' || c[i] ==  ')')
+			state = 1;
+		else if (c[i] ==  '?'  || c[i] ==  '{' || c[i] ==  '}')
+			state = 1;
 	}
 	return (c);
 }
