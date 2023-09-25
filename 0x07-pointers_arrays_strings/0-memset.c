@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * _memset - sets a memory position to a byte
  * @s: the address to fill
  * @b: the filler character
