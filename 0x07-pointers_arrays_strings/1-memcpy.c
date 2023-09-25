@@ -1,10 +1,13 @@
 #include "main.h"
 
 /*
- * _memset - sets a memory position to a byte
- *
+ * _memcpy - copy a memory to another
+ * @dest: where copied memory is stored
+ * @src: the adress to be copied
+ * @n: the number of bytes to copy
+ * Return : the resulting string
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n);
 {
 	int i;
 
