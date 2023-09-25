@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _memset - sets a memory position to a byte
- * @s: the address to fill
- * @b: the filler character
+ * _memset - set a byte to a memory adress
+ * @s: a pointer to the first adress of memory
+ * @b: the filler byte
  * @n: the number of bytes to fill
- * Return: a pointer to the first byte
+ * Return: a pointer to the first address of memory
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n) 
 {
 	int i;
 
