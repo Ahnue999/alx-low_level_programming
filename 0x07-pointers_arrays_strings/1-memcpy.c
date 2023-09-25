@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * _memcpy - copy a memory to another
- * @dest: where copied memory is stored
- * @src: the adress to be copied
+ * _memcpy - copy an n byte of memory
+ * @dest: a pointer to the first address of memory
+ * @src: a pointer to the first address of the memory to be copied
  * @n: the number of bytes to copy
- * Return: a pointer to the first byte
+ * Return: a pointer to the first address of memory
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; i < n; i++)
 		*(dest + i) = *(src + i);
