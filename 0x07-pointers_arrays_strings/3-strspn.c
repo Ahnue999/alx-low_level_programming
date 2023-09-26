@@ -25,7 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 				count++;
 				break;
 			}
-			if (j - 1 == length)
+			if (j == length - 1)
 				return (count);
 		}
 		i++;

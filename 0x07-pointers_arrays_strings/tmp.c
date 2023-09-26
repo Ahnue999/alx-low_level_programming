@@ -9,10 +9,10 @@
 int main(void)
 {
     char *s = "hello, world";
-    char *f = "oleh";
+    char *a = "oleh";
     unsigned int n;
 
-    n = _strspn(s, f);
+    n = _strspn(s, a);
     printf("%u\n", n);
     return (0);
 }
