@@ -17,7 +17,8 @@ int _sqrt_recursion(int n)
 
 /**
  * pow - return the sqrt of a number
- * @n: the number
+ * @n : the number
+ * @count: counter
  * Return: n factorial
  */
 int pow(int n, int counter)
