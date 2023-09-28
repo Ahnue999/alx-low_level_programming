@@ -15,13 +15,14 @@ int is_prime_number(int n)
 		return (0);
 	if (n == 1)
 		return (0);
-	return prime(n, 2)
+	return (prime(n, 2));
 }
 
 
 /**
  * prime - checks
  * @n: the number
+ * @counter: counter
  * Return: 1 if prime and 0 if not
  */
 int prime(int n, int counter)
@@ -32,5 +33,5 @@ int prime(int n, int counter)
 			return (1);
 		return (0);
 	}
-	return (n, counter + 1);
+	return (prime(n, counter + 1));
 }
