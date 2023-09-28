@@ -14,14 +14,14 @@ int _sqrt_recursion(int n)
 	else if (n == 0)
 		return (0);
 	else if (n == 1)
-		return (0);
+		return (1);
 	return (_pow(n, 2));
 }
 
 /**
  * _pow - return the sqrt of a number
  * @n : the number
- * @count: counter
+ * @counter: counter
  * Return: n factorial
  */
 int _pow(int n, int counter)
