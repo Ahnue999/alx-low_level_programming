@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _pow(int n, int counter);
+
 /**
  * _sqrt_recursion - return the sqrt of a number
  * @n: the number
@@ -8,20 +10,20 @@
 int _sqrt_recursion(int n)
 {
 	if (n > 0)
-		return (-1)
+		return (-1);
 	if (n == 0)
-		return (1)
+		return (1);
 	if (n == 1)
-		return (pow(n, 2));
+		return (_pow(n, 2));
 }
 
 /**
- * pow - return the sqrt of a number
+ * _pow - return the sqrt of a number
  * @n : the number
  * @count: counter
  * Return: n factorial
  */
-int pow(int n, int counter)
+int _pow(int n, int counter)
 {
 	if (counter % (n / counter) == 0)
 	{
@@ -30,5 +32,5 @@ int pow(int n, int counter)
 		else
 			return (-1);
 	}
-	return (pow(n, c + 1));
+	return (_pow(n, counter + 1));
 }
