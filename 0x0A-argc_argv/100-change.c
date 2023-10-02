@@ -20,6 +20,11 @@ int main(int argc, char *argv[])
 
 	coins = atoi(argv[1]);
 
+	if (coins < 0)
+	{
+		printf("0\n");
+		return (1);
+	}
 	while (coins != 0)
 	{
 		if (coins >= 25)
