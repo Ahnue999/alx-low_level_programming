@@ -17,37 +17,29 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
 	coins = atoi(argv[1]);
+
 	if (coins < 0)
 		printf("0\n");
+
 	while (coins != 0)
 	{
 		if (coins >= 25)
-		{
-			change++;
 			coins -= 25;
-		}
 		else if (coins >= 10)
-		{
-			change++;
 			coins -= 10;
-		}
 		else if (coins >= 5)
-		{
-			change++;
 			coins -= 5;
-		}
 		else if (coins >= 2)
-		{
-			change++;
 			coins -= 2;
-		}
 		else
-		{
-			change++;
 			coins -= 1;
-		}
+
+		change++;
 	}
+
 	printf("%d\n", change);
+
 	return (0);
 }
