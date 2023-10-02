@@ -4,11 +4,11 @@
   * main - main function
   * @argc: argument count
   * @argv: argument vector
-  * Return: Always 0 when work
+  * Return: Always 0 Success
   */
-int main(int __attribute__((unused)) argc , char* argv[]) 
+int main (int argc, char __attribute__((unused)) *argv[])
 {
-	printf("%s\n", argv[0]);
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
