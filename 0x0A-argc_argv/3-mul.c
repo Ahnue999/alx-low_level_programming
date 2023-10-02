@@ -7,7 +7,7 @@
   * @argv: argument vector
   * Return: Always 0 when work
   */
-int main(int argc , char* argv[]) 
+int main(int argc, char *argv[])
 {
 	int a, b;
 
