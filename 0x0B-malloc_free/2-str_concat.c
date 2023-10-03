@@ -20,19 +20,19 @@ char *str_concat(char *s1, char *s2)
 	if (p == NULL)
 		return ('\0');
 
-	i = 0;
+	i = j = 0;
 	while (*(s1 + i) != '\0')
 	{
-		*(p + i) = *(s1 + i);
+		*(p + j) = *(s1 + i);
 		i++;
+		j++;
 	}
-	j = i;
 	i = 0;
 	while (*(s2 + i) != '\0')
 	{
 		*(p + j) = *(s2 + i);
-		j++;
 		i++;
+		j++;
 	}
 
 	*(p + j) = '\0';
