@@ -14,7 +14,7 @@ int word_count(char *s)
 	i = Wcount = 0;
 	is_word = 1;
 
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == ' ')
 		{
