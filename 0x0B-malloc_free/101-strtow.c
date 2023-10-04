@@ -37,8 +37,7 @@ int word_count(char *s)
  */
 char **strtow(char *str)
 {
-	int i, c, w, Wcount, length = 0;
-	int first, last;
+	int i, c, w, Wcount, first, last, length = 0;
 	char *word;
 	char **words;
 
@@ -51,13 +50,10 @@ char **strtow(char *str)
 
 	words = (char **)malloc(sizeof(char *) * Wcount + 1);
 	if (words == NULL)
-	{
-		printf("Error\n");
 		return (NULL);
-	}
 
 	c = w = 0;
-	for (i = 0; i < Wcount; i++)
+	for (i = 0; i <= length; i++)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
 		{
@@ -71,6 +67,7 @@ char **strtow(char *str)
 					*word++ = str[first++];
 				*word = '\0';
 				words[w] = word - c;
+				w++;
 				c = 0;
 			}
 		}
