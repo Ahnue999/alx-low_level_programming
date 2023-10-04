@@ -16,57 +16,18 @@ int word_count(char *s)
 
 	while(s[i])
 	{
-		if (is_word && s[i] != ' ')
+		if (s[i] == ' ')
+		{
+			is_word = 1;
+		}
+		else if (is_word)
 		{
 			Wcount++;
 			is_word = 0;
 		}
-		else if (s[i] == ' ')
-			is_word = 1;
 		i++;
 	}
 	return (Wcount);
-}
-
-/**
- * s - extract a word from a string
- * @str: the string to extract from
- * Return: a word
- */
-char *extract_word(char *str)
-{
-	int i, length = 0;
-	char *newstr;
-
-	if (str == NULL)
-	{
-		printf("ERROR !!");
-		return (NULL);
-	}
-
-	i = 0;
-	while (str[i] != ' ' || str[i] != '\0')
-	{
-		length++;
-		i++;
-	}
-
-	newstr = (char *)malloc(sizeof(char) * length + 20);
-
-	if (newstr == NULL)
-	{
-		printf("ERROR\n");
-		return (NULL);
-	}
-
-	for (i = 0; i < length; i++)
-	{
-		newstr[i] = str[i];
-	}
-
-	newstr[i] = '\0';
-
-	return (newstr);
 }
 
 /**
@@ -76,53 +37,50 @@ char *extract_word(char *str)
  */
 char **strtow(char *str)
 {
-	int i, j, w, Wcount, length;
-	char *aword;
+	int i, c, w, Wcount, length = 0;
+	int first, last;
+	char *word;
 	char **words;
-	int state = 1;
 
-	if (str == NULL)
-		return (NULL);
-
-	aword = (char *)malloc(sizeof(char) * 20);
+	while (*(str + length))
+		length++;
 
 	Wcount = word_count(str);
+	if (Wcount == 0)
+		return (NULL);
 
 	words = (char **)malloc(sizeof(char *) * Wcount + 1);
-
 	if (words == NULL)
 	{
 		printf("Error\n");
 		return (NULL);
 	}
 
-	i = j = w = length = 0;
-	while (str[i] != '\0')
+	c = w = 0;
+	for (i = 0; i < Wcount; i++)
 	{
-		if (state && str[i] != ' ')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			strcpy(aword, extract_word(str + i));
-			length = strlen(aword);
-
-			words[i] = (char *)malloc(sizeof(char) * length + 1);
-
-			j = 0;
-			while(aword[j] != '\0')
+			if (c)
 			{
-				words[w][j] = aword[j];
-				j++;
+				last = i;
+				word = (char *)malloc(sizeof(char) * c + 1);
+				if (word == NULL)
+					return (NULL);
+				while (first < last)
+					*word++ = str[first++];
+				*word = '\0';
+				words[w] = word - c;
+				c = 0;
 			}
-			words[w][j] = '\0';
-			w++;
-			i += length;
-			state = 0;
 		}
-		if (str[i] != ' ')
+		else if (c++ == 0)
 		{
-			state = 1;
+			first = i;
 		}
-		i++;
 	}
+
 	words[w] = NULL;
+
 	return (words);
 }
