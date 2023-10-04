@@ -48,7 +48,7 @@ char **strtow(char *str)
 	if (Wcount == 0)
 		return (NULL);
 
-	words = (char **)malloc(sizeof(char *) * Wcount + 1);
+	words = (char **)malloc(sizeof(char *) * (Wcount + 1));
 	if (words == NULL)
 		return (NULL);
 
@@ -60,7 +60,7 @@ char **strtow(char *str)
 			if (c)
 			{
 				last = i;
-				word = (char *)malloc(sizeof(char) * c + 1);
+				word = (char *)malloc(sizeof(char) * (c + 1));
 				if (word == NULL)
 					return (NULL);
 				while (first < last)
@@ -72,11 +72,8 @@ char **strtow(char *str)
 			}
 		}
 		else if (c++ == 0)
-		{
 			first = i;
-		}
 	}
-
 	words[w] = NULL;
 
 	return (words);
