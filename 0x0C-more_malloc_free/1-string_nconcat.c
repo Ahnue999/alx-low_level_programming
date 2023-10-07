@@ -18,7 +18,7 @@ int _strlen(char *s)
 
 	return (i);
 }
-		
+
 /**
   * string_nconcat - concatenates two strings
   * @s1: the first string
@@ -43,7 +43,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	length = length1 + n;
 
-	p = malloc(sizeof(char) * length);
+	p = malloc(sizeof(char) * length + 1);
 
 	if (p == NULL)
 		exit(98);
