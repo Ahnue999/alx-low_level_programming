@@ -4,7 +4,7 @@
 /**
  * dog_t - a typedef for dog
  */
-typedef struct dog dog_t
+typedef struct dog dog_t;
 
 /**
   * struct dog - dog structure
