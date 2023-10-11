@@ -1,11 +1,13 @@
-#inlucde <stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "3-calc.h"
 
 /**
   * 
   *
   *
   */
-int (*get_op_func(char *s))(int a, int b)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -20,8 +22,9 @@ int (*get_op_func(char *s))(int a, int b)
 	i = 0;
 	while (i)
 	{
-		if (s == ops[i][0])
-			retrun (ops[i[1](a, b)
+		if (s == ops[i].op)
+			return (ops[i].f);
+		i++;
 	}
 	return (NULL);
 }
