@@ -20,11 +20,12 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (i)
+	while (i < 6)
 	{
 		if (s == ops[i].op)
 			return (ops[i].f);
 		i++;
 	}
+	printf("here");
 	return (NULL);
 }
