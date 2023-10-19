@@ -1,12 +1,12 @@
 #include "lists.h"
 
 /**
- * add_node - adds a node int the beginning of a list.
+ * add_node_end - adds a node into the end of a list.
  * @head: the list pointer (head).
  * @str: the string to add
  * Return: the address of the new element or NULL if failed.
  */
-list_t *add_node(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str);
 {
 	list_t *temp;
 	size_t i = 0;
