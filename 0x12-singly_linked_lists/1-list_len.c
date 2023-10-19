@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * list_lin - returns the length of a list.
+ * list_len - returns the length of a list.
  * @h: the list.
  * Return: the length.
  */
