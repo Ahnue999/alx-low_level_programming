@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <string.h>
 
 /**
  * add_node - adds a node int the beginning of a list.
@@ -6,12 +7,12 @@
  * @str: the string to add
  * Return: the address of the new element or NULL if failed.
  */
-list_t *add_node(list_t **head, const char *str);
+list_t *add_node(list_t **head, const char *str)
 {
 	list_t *temp;
 	size_t i = 0;
 
-	tmep = malloc(sizeof(list_t));
+	temp = malloc(sizeof(list_t));
 	if (temp == NULL)
 		return(NULL);
 
@@ -24,5 +25,5 @@ list_t *add_node(list_t **head, const char *str);
 	temp->next = *head;
 	*head = temp;
 
-	return(head);
+	return(temp);
 }
