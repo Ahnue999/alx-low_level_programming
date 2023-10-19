@@ -1,19 +1,11 @@
-#include "lists.h"
-#include <string.h>
+#include <stdio.h>
 
 /**
- * free_list - frees a list.
- * @head: the list pointer (head).
+ * first - a function the prints before main.
  * Return: Nothing.
  */
-void free_list(list_t *head)
+void __attribute__ ((constructor)) first()
 {
-	list_t temp;
-
-	while ((temp = head) != NULL)
-	{
-		head = head->next;
-		free(temp->str);
-		free(temp);
-	}
+	printf("You're beat! and yet, you must allow");
+	printf(",\nI bore my house upon my back!\n");
 }
