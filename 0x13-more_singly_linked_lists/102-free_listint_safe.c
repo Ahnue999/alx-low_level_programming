@@ -32,6 +32,7 @@ void free_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
 	listptr_t *headptr, *newptr, *toadd;
+	listint_t *current;
 
 	headptr = NULL;
 	
@@ -52,15 +53,17 @@ void free_listint_safe(const listint_t *head)
 			toadd = toadd->next;
 			if (head == toadd->ptr)
 			{
-				printf("->[%p] %d\n", (void *)head, head->n);
+				*h = NULL;
 				free_listptr(&headptr);
 				return (i);
 			}
 		}
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
+		current = *h;
+		*h = (*h)->next;
+		free(current);
 		i++;
 	}
+	*h = NULL;
 	free_listptr(&headptr);
 	return (i);
 }
