@@ -6,7 +6,7 @@
  *
  * Return: no thing.
  */
-void free_listptr(listptr_t **head)
+void free_listptr2(listptr_t **head)
 {
 	listptr_t *temp1, *temp2;
 
@@ -28,7 +28,7 @@ void free_listptr(listptr_t **head)
  *
  * Return: No thing.
  */
-void free_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
 	size_t i = 0;
 	listptr_t *headptr, *newptr, *toadd;
@@ -36,13 +36,13 @@ void free_listint_safe(const listint_t *head)
 
 	headptr = NULL;
 	
-	while (head)
+	while (*h)
 	{
 		newptr = malloc(sizeof(listptr_t));
 		if (newptr == NULL)
 			exit(98);
 
-		newptr->ptr = (void *)head;
+		newptr->ptr = (void *)h;
 		newptr->next = headptr;
 		headptr = newptr;
 
@@ -51,10 +51,10 @@ void free_listint_safe(const listint_t *head)
 		while (toadd->next != NULL)
 		{
 			toadd = toadd->next;
-			if (head == toadd->ptr)
+			if (h == toadd->ptr)
 			{
 				*h = NULL;
-				free_listptr(&headptr);
+				free_listptr2(&headptr);
 				return (i);
 			}
 		}
@@ -64,6 +64,6 @@ void free_listint_safe(const listint_t *head)
 		i++;
 	}
 	*h = NULL;
-	free_listptr(&headptr);
+	free_listptr2(&headptr);
 	return (i);
 }
