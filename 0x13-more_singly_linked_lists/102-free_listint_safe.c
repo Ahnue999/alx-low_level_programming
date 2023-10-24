@@ -23,12 +23,12 @@ void free_listptr(listptr_t **head)
 }
 
 /**
- * print_list_safe - prints a linked list (safely?).
+ * free_list_safe - frees a list of integer (safely?).
  * @head: the head pointer.
  *
- * Return: the number of nodes.
+ * Return: No thing.
  */
-size_t print_listint_safe(const listint_t *head)
+void free_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
 	listptr_t *headptr, *newptr, *toadd;

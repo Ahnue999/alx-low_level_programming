@@ -18,6 +18,19 @@ typedef struct listint_s
     struct listint_s *next;
 } listint_t;
 
+/**
+ * listptr_s - a single linked list.
+ * @ptr: a pointer.
+ * @listptr_s: a pointer to the next element
+ *
+ * Discription: a single linked list of pointers.
+ */
+typedef struct listptr_s
+{
+	void *ptr;
+	struct listptr_s *next;
+} listptr_t;
+
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -31,5 +44,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
+void free_listptr(listptr_t **);
 
 #endif
