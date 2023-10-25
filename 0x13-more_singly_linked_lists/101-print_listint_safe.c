@@ -13,7 +13,7 @@ void free_listptr(listptr_t **head)
 	if (head)
 	{
 		temp2 = *head;
-		while((temp1 = temp2) != NULL)
+		while ((temp1 = temp2) != NULL)
 		{
 			temp2 = temp2->next;
 			free(temp1);
@@ -23,7 +23,7 @@ void free_listptr(listptr_t **head)
 }
 
 /**
- * print_list_safe - prints a linked list (safely?).
+ * print_listint_safe - prints a linked list (safely?).
  * @head: the head pointer.
  *
  * Return: the number of nodes.
@@ -34,7 +34,7 @@ size_t print_listint_safe(const listint_t *head)
 	listptr_t *headptr, *newptr, *toadd;
 
 	headptr = NULL;
-	
+
 	while (head)
 	{
 		newptr = malloc(sizeof(listptr_t));

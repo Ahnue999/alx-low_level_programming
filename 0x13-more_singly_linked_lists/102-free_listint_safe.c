@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_listptr - frees a list of pointers.
+ * free_listptr2 - frees a list of pointers.
  * @head: The head pointer.
  *
  * Return: no thing.
@@ -13,7 +13,7 @@ void free_listptr2(listptr_t **head)
 	if (head)
 	{
 		temp2 = *head;
-		while((temp1 = temp2) != NULL)
+		while ((temp1 = temp2) != NULL)
 		{
 			temp2 = temp2->next;
 			free(temp1);
@@ -23,8 +23,8 @@ void free_listptr2(listptr_t **head)
 }
 
 /**
- * free_list_safe - frees a list of integer (safely?).
- * @head: the head pointer.
+ * free_listint_safe - frees a list of integer (safely?).
+ * @h: the head pointer.
  *
  * Return: No thing.
  */
@@ -35,7 +35,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current;
 
 	headptr = NULL;
-	
+
 	while (*h)
 	{
 		newptr = malloc(sizeof(listptr_t));
