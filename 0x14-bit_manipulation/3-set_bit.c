@@ -9,14 +9,12 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int count = 1;
+	int c = 1 << index;
 
-	while (index)
-	{
-		count *= 2;
-		index--;
-	}
+	if (index > 63)
+		return (-1);
 
-	*n = *n | count;
+	*n = *n | c;
+
 	return (1);
 }
