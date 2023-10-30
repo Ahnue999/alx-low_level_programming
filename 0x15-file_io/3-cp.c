@@ -1,12 +1,11 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * errors - checks if files can be opened.
- * @file_from: file_from.
- * @file_to: file_to.
+ * errors - checks if file is open-able.
+ * @file_from: the file_from.
+ * @file_to: the file_to.
  * @argv: arguments vector.
- * Return: no return.
+ * Return: Nothing.
  */
 void errors(int file_from, int file_to, char *argv[])
 {
@@ -15,6 +14,7 @@ void errors(int file_from, int file_to, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+
 
 	if (file_to == -1)
 	{
