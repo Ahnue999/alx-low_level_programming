@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include "main.h"
+#include <elf.h>
 
 void check_elf(unsigned char *mag_nums);
 void print_magic(unsigned char *mag_nums);
