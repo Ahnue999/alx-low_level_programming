@@ -3,7 +3,6 @@
  * Auth: Suara Ayomide
  */
 
-#include <elf.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
