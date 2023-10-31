@@ -1,12 +1,8 @@
-/*
- * File: 100-elf_header.c
- * Auth: Suara Ayomide
- */
-
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include "main.h"
 
 void check_elf(unsigned char *mag_nums);
 void print_magic(unsigned char *mag_nums);
