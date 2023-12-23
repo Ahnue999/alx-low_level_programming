@@ -148,7 +148,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @ht: the table.
  * @key: key to retrive.
  *
- * @Return: value of @key.
+ * Return: value of @key.
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
