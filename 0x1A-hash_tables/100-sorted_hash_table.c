@@ -4,7 +4,7 @@
  * shash_table_create - creats a hash table.
  *
  * @size: the size.
- * @Return: the table or NULL if failed.
+ * Return: the table or NULL if failed.
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
@@ -33,7 +33,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 /**
  * add_m_shash - adds a node at the beginning.
- * @head: head of linked list.
+ * @h: head of linked list.
  * @key: key.
  * @value: value.
  *
@@ -148,7 +148,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * @ht: the table.
  * @key: key to retrive.
  *
- * @return: value of @key.
+ * @Return: value of @key.
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
