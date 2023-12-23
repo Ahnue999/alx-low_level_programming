@@ -39,11 +39,11 @@ shash_table_t *shash_table_create(unsigned long int size)
  *
  * Return: new node.
  */
-shash_node_t *add_n_shash(shash_node_t **head, const char *key, const char *value)
+shash_node_t *add_n_shash(shash_node_t **h, const char *key, const char *value)
 {
 	shash_node_t *tmp;
 
-	tmp = *head;
+	tmp = *h;
 
 	while (tmp)
 	{
@@ -62,9 +62,9 @@ shash_node_t *add_n_shash(shash_node_t **head, const char *key, const char *valu
 
 	tmp->key = strdup(key);
 	tmp->value = strdup(value);
-	tmp->next = *head;
+	tmp->next = *h;
 
-	*head = tmp;
+	*h = tmp;
 	return (tmp);
 }
 
