@@ -32,14 +32,14 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * add_n_shash - adds a node at the beginning.
+ * add_m_shash - adds a node at the beginning.
  * @head: head of linked list.
  * @key: key.
  * @value: value.
  *
  * Return: new node.
  */
-shash_node_t *add_n_shash(shash_node_t **h, const char *key, const char *value)
+shash_node_t *add_m_shash(shash_node_t **h, const char *key, const char *value)
 {
 	shash_node_t *tmp;
 
@@ -69,13 +69,13 @@ shash_node_t *add_n_shash(shash_node_t **h, const char *key, const char *value)
 }
 
 /**
- * add_i_shash - adds a node to DLL of shash table.
+ * add_j_shash - adds a node to DLL of shash table.
  *
  * @ht: table.
  * @node: new node.
  * Return: void.
  */
-void add_i_shash(shash_table_t *ht, shash_node_t *node)
+void add_j_shash(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *tmp1, *tmp2;
 	int ret;
@@ -135,11 +135,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((unsigned char *)key, ht->size);
 
-	new = add_n_shash(&(ht->array[index]), key, value);
+	new = add_m_shash(&(ht->array[index]), key, value);
 	if (!new)
 		return (0);
 
-	add_i_shash(ht, new);
+	add_j_shash(ht, new);
 	return (1);
 }
 
