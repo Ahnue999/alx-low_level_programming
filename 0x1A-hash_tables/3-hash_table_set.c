@@ -10,31 +10,34 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *new;
-	hash_node_t **list;
+	unsigned long int index = 0;
+	hash_node_t *new = NULL, *tmp = NULL;
 
+	if (!ht || !key || !(*key) || !value)
+		return (0);
+
+	index = key_index((const unsigned char *)key, ht->size);
+
+	tmp = ht->array[index];
+	while (tmp && strcmp(key, tmp->key) != 0)
+		tmp = tmp->next;
+
+	if (tmp)
+	{
+		free(tmp->value);
+		tmp->value = strdup(value);
+		return (1);
+	}
 
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-	/* key can't be empty!!!!*/
-	if (strcmp(key, "") == 0)
-		return (0);
+
 	new->key = strdup(key);
 	new->value = strdup(value);
-	new->next = NULL;
 
-	index = key_index((const unsigned char *)key, ht->size);
+	new->next = ht->array[index];
+	ht->array[index] = new;
 
-	list = &(ht->array[index]);
-	if (!*list)
-	{
-		*list = new;
-		return (1);
-	}
-	while ((*list)->next)
-		*list = (*list)->next;
-	(*list)->next = new;
 	return (1);
 }
