@@ -16,7 +16,4 @@ oclean :
 
 fclean : clean oclean
 
-re : $(SRC)
-	$(CC) -c main.c -o main.o
-	$(CC) -c school.c -o school.o
-	$(CC) $(CFLAG) $(OBJ) -o $(NAME)
+re : fclean all
